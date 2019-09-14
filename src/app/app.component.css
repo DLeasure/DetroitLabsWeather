@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: cadetblue;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 0 5px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
