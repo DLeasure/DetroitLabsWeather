@@ -8,8 +8,8 @@ export class CurrentWeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getUsersLatLon(country, ZIP) {
-    return this.http.get("http://localhost:3500/latLon/" + country + "/" + ZIP);
+  getUsersLatLon(currentLocation) {
+    return this.http.get("http://localhost:3500/current/" + currentLocation);
     // })
   };
 

@@ -12,9 +12,12 @@ export class CurrentComponent implements OnInit {
 
   currentPosition : string;
 
+  
+
   ngOnInit() {
     this.locationService.getPosition().then(pos=> {
-    this.currentPosition = ("lat" + pos.lat + "&lon" + pos.lng);
-  })};
+      this.currentPosition = ("lat" + pos.lat + "&lon" + pos.lng);
+    });
+  };
 
 }
