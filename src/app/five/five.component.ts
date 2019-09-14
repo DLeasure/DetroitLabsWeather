@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from '../location.service';
 
 @Component({
   selector: 'app-five',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private locationService: LocationService) {};
+
+  currentPosition : string;
 
   ngOnInit() {
-  }
+    this.locationService.getPosition().then(pos=> {
+    this.currentPosition = ("lat" + pos.lat + "&lon" + pos.lng);
+  })};
 
 }
