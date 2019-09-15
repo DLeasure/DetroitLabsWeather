@@ -19,6 +19,7 @@ export class CurrentComponent implements OnInit {
       this.currentPosition = ("lat=" + pos.lat + "&lon=" + pos.lng);
       this.currentWeatherService.getCurrentWeather(this.currentPosition).subscribe(resp => {
         this.currentWeather = resp;
+        console.log(this.currentWeather);
       });
     });
   };

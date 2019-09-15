@@ -9,4 +9,10 @@ describe('CurrentWeatherService', () => {
     const service: CurrentWeatherService = TestBed.get(CurrentWeatherService);
     expect(service).toBeTruthy();
   });
+  
+  it('service should return result', () => {
+    const currentWeatherService : CurrentWeatherService;
+    const weatherTest = currentWeatherService.getCurrentWeather('lat=42.51955290000001&lon=-83.173485&');
+    expect(weatherTest.coord.lat).toEqual('42.52')
+  });
 });
