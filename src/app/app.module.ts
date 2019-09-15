@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { CurrentComponent } from './current/current.component';
