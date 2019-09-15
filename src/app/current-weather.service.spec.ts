@@ -15,6 +15,6 @@ describe('CurrentWeatherService', () => {
   
   it('service should return result', () => {
     const weatherTest = currentWeatherService.getCurrentWeather('lat=42.51955290000001&lon=-83.173485&');
-    expect(weatherTest.coord.lat).toEqual('42.52')
+    expect(weatherTest.coord.lat).toEqual('42.52');
   });
 });
