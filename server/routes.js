@@ -6,9 +6,11 @@ APIKey = "2b164376f29a1417f6e2dbb7b262f08d";
 
 routes.get("/current/:currentPosition", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    axios.get('api.openweathermap.org/data/2.5/weather?' + req.params.currentPosition + '&APPID=' + APIKey)
+    console.log("router sending API request");
+    axios.get('http://api.openweathermap.org/data/2.5/weather?' + req.params.currentPosition + '&APPID=' + APIKey)
         .then(response => {
-            res.status(200).send(response);
+            res.status(200).send(response.JSON);
+            console.log(response);
         })
         .catch(error => {
             console.log(error);

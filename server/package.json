@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "jasmine-node": "^3.0.0",
     "routes": "^2.1.0"
