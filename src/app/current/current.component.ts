@@ -11,9 +11,11 @@ export class CurrentComponent implements OnInit {
 
   constructor(private locationService: LocationService, private currentWeatherService: CurrentWeatherService) {};
 
+  // Variables for storing weather info
   currentPosition : string;
   currentWeather : object;
 
+  // On init - grab current coordinates and request current weather / store result
   ngOnInit() {
     this.locationService.getPosition().then(pos=> {
       this.currentPosition = ("lat=" + pos.lat + "&lon=" + pos.lng);

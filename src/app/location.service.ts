@@ -7,6 +7,7 @@ export class LocationService {
 
   constructor() { }
 
+  // Request permission to access current location and return result
   getPosition(): Promise<any> {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resp => {

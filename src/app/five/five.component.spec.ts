@@ -22,4 +22,11 @@ describe('FiveComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('weather icon should return result', () => {
+    const testIcon = component.findImgSource("10d");
+    expect(testIcon).toBeTruthy();
+  });
+
+
 });
