@@ -1,1 +1,27 @@
-<p>five works!</p>
+<div class="mat-elevation-z8" *ngIf="fiveDayForecast">
+    <table mat-table [dataSource]="fiveDayForecast">
+  
+      <!-- DateTime Column -->
+      <ng-container matColumnDef="dateTime">
+        <th mat-header-cell *matHeaderCellDef> Date and Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.dt_txt}} </td>
+      </ng-container>
+  
+      <!-- Temp Column -->
+      <ng-container matColumnDef="temperature">
+        <th mat-header-cell *matHeaderCellDef> Temperature </th>
+        <td mat-cell *matCellDef="let element"> {{element.main.temp}} </td>
+      </ng-container>
+  
+      <!-- Icon Column -->
+      <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef> Icon </th>
+        <td mat-cell *matCellDef="let element"> {{element.weather[0].icon}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
