@@ -15,7 +15,7 @@ export class FiveComponent implements OnInit {
 
   // Variables for storing forecast info
   currentPosition : string;
-  fiveDayForecast : any = [];
+  fiveDayForecast : any;
 
   // configure table
   displayedColumns: string[] = ['dateTime', 'temperature', 'icon'];
@@ -27,7 +27,11 @@ export class FiveComponent implements OnInit {
   }; 
 
   // Used for Table
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   // On init - grab current coordinates and populate array of results
   ngOnInit() {
@@ -35,6 +39,7 @@ export class FiveComponent implements OnInit {
       this.currentPosition = ("lat=" + pos.lat + "&lon=" + pos.lng);
       this.fiveWeatherService.getFiveDayWeather(this.currentPosition).subscribe(resp => {
         this.fiveDayForecast = resp.list;
+        this.dataSource.paginator = this.paginator;
         console.log(this.fiveDayForecast);
       });
   })};
